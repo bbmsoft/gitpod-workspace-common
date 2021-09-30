@@ -51,14 +51,14 @@ __set_bash_prompt() {
         if [[ ${EUID} == 0 ]]; then
             PreGitPS1+="${RED}${BOLD}\u${RESET}@\h "
         else
-            PreGitPS1+="${CYAN}\u${RESET}@${MAGENTA}\h${RESET} "
+            PreGitPS1+="${CYAN}\u${RESET} "
         fi
 
         PreGitPS1+="\W"
     else # No colour
         # Sets prompt like: ravi@boxy:~/prj/sample_app
         unset GIT_PS1_SHOWCOLORHINTS
-        PreGitPS1="\u@\h \W"
+        PreGitPS1="\u \W"
     fi
 
     PreGitPS1+="$COFFEE"
